@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import Navbar from '@/components/Navbar'
 import FileUpload from '@/components/FileUpload'
 import { useDetectionStore } from '@/lib/store'
+import { API_BASE } from '@/lib/config'
 import { cn } from '@/lib/utils'
 
 export default function HomePage() {
@@ -48,7 +49,7 @@ export default function HomePage() {
 
       setProgress('正在检测中，请稍候...')
 
-      const res = await fetch('/api/detect', {
+      const res = await fetch(`${API_BASE}/api/detect`, {
         method: 'POST',
         body: formData,
       })

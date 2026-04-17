@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import { useDetectionStore } from '@/lib/store'
+import { API_BASE } from '@/lib/config'
 import { cn } from '@/lib/utils'
 
 export default function ResultsPage() {
@@ -54,7 +55,7 @@ export default function ResultsPage() {
       formData.append('file', file)
       formData.append('region', region)
 
-      const res = await fetch('/api/fix', { method: 'POST', body: formData })
+      const res = await fetch(`${API_BASE}/api/fix`, { method: 'POST', body: formData })
       const data = await res.json()
 
       if (data.success) {
