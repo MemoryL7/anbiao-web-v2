@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light mode */
+  --bg-page: #F9FAFB;
+  --bg-card: #FFFFFF;
+  --border: #E5E7EB;
+  --text-primary: #111827;
+  --text-secondary: #6B7280;
+  --text-disabled: #9CA3AF;
+  --primary: #1A56DB;
+  --primary-hover: #1E40AF;
+  --primary-light: #EFF6FF;
+  --success: #059669;
+  --success-light: #ECFDF5;
+  --danger: #DC2626;
+  --danger-light: #FEF2F2;
+  --warning: #D97706;
+  --warning-light: #FFFBEB;
+}
+
+.dark {
+  --bg-page: #0F172A;
+  --bg-card: #1E293B;
+  --border: #334155;
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  --text-disabled: #64748B;
+  --primary: #3B82F6;
+  --primary-hover: #2563EB;
+  --primary-light: #1E3A5F;
+  --success: #34D399;
+  --success-light: #064E3B;
+  --danger: #F87171;
+  --danger-light: #7F1D1D;
+  --warning: #FBBF24;
+  --warning-light: #78350F;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+/* Drop zone animation */
+.drop-zone-active {
+  border-color: var(--primary) !important;
+  background-color: var(--primary-light) !important;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
